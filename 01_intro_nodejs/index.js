@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
     res.write("Hello World")
     res.end()
   } else if (req.url ==="/hello" && req.method === "POST") {
-    res.write("Hello Juma")
+    res.write("Hello john")
     res.end()
   } else if (req.url === "/read") {
     fs.readFile("./hello.txt", (err, data) => {
