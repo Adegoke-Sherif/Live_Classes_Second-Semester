@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
   if(req.url ==="/") {
     res.write("Hello World")
     res.end()
-  } else if (req.url ==="/hello") {
+  } else if (req.url ==="/hello" && req.method === "POST") {
     res.write("Hello Juma")
     res.end()
   } else if (req.url === "/read") {
