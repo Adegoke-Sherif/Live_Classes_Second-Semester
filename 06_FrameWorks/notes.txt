@@ -1,0 +1,26 @@
+Routes & Router 
+- /books /books/:id
+- /books:booksId/authors/:authorsId
+Middleware - Global level- route level- functional level
+
+Data
+Headers
+Methods- Get, POST, PUT, DElETE, Patch-OPTION
+Body
+Query Params (req.query) [/books/?key=value]
+Path Params /books/:id
+
+MVCs(Model view controller)-direction and orchestrate the route
+Service
+controllers
+
+Serving Static file
+
+
+##Assignment
+Build an App using express
+-create Author Router in another file
+-this should have CRUD endpoints
+-Link to the main file
+-add a simple logger to the App
+-
