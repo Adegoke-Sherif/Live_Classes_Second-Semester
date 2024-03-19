@@ -1,4 +1,4 @@
-//function that takes in req, res and next
+//function that takes in req, res and next global middleware
 const logger = (req, res, next) => {
   console.log("Request", {
     url: req.url,
