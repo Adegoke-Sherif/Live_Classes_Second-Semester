@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.use((req, res, next) => {
   console.log("request from books");
-  console.log("authentification", req.headers["authentification"]);
+  console.log("authentification", req.headers["authentification"]);  //global route
   console.log("Content-type", req.headers["Content-type"]);
   next();
 })
