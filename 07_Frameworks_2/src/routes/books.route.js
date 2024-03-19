@@ -1,29 +1,22 @@
 const express = require("express");
-const { getBooksController, getSomethingController } = require("../Controller/book.controller");
+const booksController = require("../Controller/book.controller");
 const router = express.Router();
 
 router.use((req, res, next) => {
   console.log("request from books");
-  console.log("authentication", req.headers["authentication"]);
+  console.log("authentification", req.headers["authentification"]);
+  console.log("Content-type", req.headers["Content-type"]);
   next();
 })
 const lastLayerMiddleware = (req, res, next) => {
   console.log("last layer middleware");
   next();
 }
-router.get("/",lastLayerMiddleware, (req, res) => {
-  getBooksController(req, res)
-})
+router.get("/",lastLayerMiddleware, booksController.getBooks)
+router.get("/something", booksController.getSomething)
+router.get("/:booksId", booksController.getBookById)
 
-router.get("/something", (req, res) => {
-  getSomethingController(req, res)
-})
-
-router.get("/:booksId", (req, res) => {
-  console.log(req.params);
-  console.log(req.query)
-  res.json({ name: "Harry potter", pages: 760})
-})
+router.get("/:booksId/authors/:authorId", booksController.getBookByIdAndAuthorId)
 
 router.post("/", (req, res) => {
   res.json({ message: "Book created", books: req.body})
