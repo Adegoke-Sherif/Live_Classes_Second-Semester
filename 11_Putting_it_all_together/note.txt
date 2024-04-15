@@ -1,0 +1,20 @@
+// User can own a wallet
+// A USer can transfer to another wallet
+
+
+//USer
+//Name
+//Email
+//createdAt
+
+//Wallet
+//Balance
+//USer
+//wallet-wallet transfer
+
+//transaction
+//type-Credit/Debit
+// Amount
+//wallet
+//Ballance after and before
+//createdAt

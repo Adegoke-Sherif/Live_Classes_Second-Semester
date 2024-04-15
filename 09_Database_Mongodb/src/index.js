@@ -1,14 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-
+ 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3333;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(express.json());
-
 //Schema
 const userSchema = mongoose.Schema({
   firstName: {
@@ -36,6 +35,7 @@ mongoose.connect(MONGODB_URI, {
 }).catch((error) => {
 console.log("Error: ", error);
 })
+
 app.get("/user", async (req, res) => {
   const users = await User.find();
   res.json(users)
